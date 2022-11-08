@@ -1,0 +1,1 @@
+web gunicorn aartikhemani.wsgi:application --log-file -
