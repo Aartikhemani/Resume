@@ -5,15 +5,17 @@ admin.site.register(Home)
 admin.site.register(Portfolio)
 
 
-
 class ProfileInline(admin.TabularInline):
     model = Profile
     extra = 1
 
+class SocialInLine(admin.TabularInline):
+    model = Social
+    extra = 1
 
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
-    inlines = [ProfileInline]
+    inlines = [ProfileInline,SocialInLine]
 
 
 @admin.register(Contact)

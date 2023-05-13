@@ -9,10 +9,10 @@
 
 /*===== Colores =====*/
 :root{
-    --first-color: #5361FF;
-    --white-color: #FAFAFF;
-    --dark-color: #2A3B47;
-    --text-color: #697477;
+    --first-color: #FFD900;
+    --white-color: #111111;
+    --dark-color: #FFD900;
+    --text-color: #111111;
 }
 
 /*===== Fuente y tipografia =====*/
@@ -47,7 +47,7 @@
 
 /*===== BASE =====*/
 *,::before,::after{
-    box-sizing: border-box;
+    /*box-sizing: border-box;*/
 }
 html{
     scroll-behavior: smooth;
@@ -59,6 +59,7 @@ body{
     font-weight: var(--font-medium);
     color: var(--text-color);
     line-height: 1.6;
+
 }
 h1,h2,p{
     margin: 0;
@@ -76,6 +77,10 @@ img{
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+.iconimg {
+    display: inline!important;
 }
 
 /*===== CLASS CSS ===== */
@@ -103,7 +108,7 @@ img{
 
 /*===== LAYOUT =====*/
 .bd-grid{
-    max-width: 1024px;
+    max-width: 1400px;
     display: grid;
     grid-template-columns: 100%;
     grid-column-gap: 2rem;
@@ -207,7 +212,8 @@ img{
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 295px;
+    width: 800px;
+
 }
 
 /* ===== ABOUT =====*/
@@ -273,10 +279,13 @@ img{
 .skills__img img{
     border-radius: .5rem;
 }
+.skills__name {
+    background-color: #f6cdd7;
+}
 
 /* ===== PORTFOLIO =====*/
 .portfolio{
-    background-color: var(--white-color);
+    background-color: gray;
 }
 .portfolio__container{
     justify-items: center;
@@ -438,11 +447,11 @@ img{
         padding: 4rem 0;
     }
     .about__img{
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
     .about__img img{
-        width: 165px;
+        width: 1650px;
     }
 
     .skills__container{
@@ -478,12 +487,91 @@ img{
 }
 
 /* For tall screens on mobiles y desktop*/
-@media screen and (min-height: 721px) {
+@media screen and (min-height: 721px){
     .home__container {
         height: 640px;
     }
     .home__img {
-        width: 500px;
+        width: 800px;
         right: 24%;
+        margin-left: 10000px;
+        padding-left: 1000px;
     }
+}
+
+.translated-ltr{margin-top:-40px;}
+.translated-ltr{margin-top:-40px;}
+.goog-te-banner-frame {display: none;margin-top:-20px;}
+
+.goog-logo-link {
+   display:none !important;
+}
+
+.goog-te-gadget{
+   color: transparent !important;
+}
+.VIpgJd-ZVi9od-ORHb-OEVmcd{
+    display: none !important;
+}
+
+@media screen and (max-width: 600px){
+       .home__img {
+        width: 800px;
+        right: 0;
+        margin-left: 10000px;
+        padding-left: 1000px;
+    }
+      .contact__input{
+        width: 100%;
+        padding: 0;
+    }
+        .home__title{
+         align-self: flex-end;
+         font-size: 80px;
+         color: var(--white-color);
+         line-height: .8;}
+
+        .whatsapp_Float_btn{
+          width: 30px;
+      }
+
+}
+
+@media  screen and (max-width: 280px){
+       .home__title{
+         align-self: flex-end;
+         font-size: 60px;
+         margin-top: 10px;
+         color: var(--white-color);
+         line-height: .8;
+}
+      .contact__input{
+        width: 100%;
+        padding: 0;
+    }
+      .whatsapp_Float_btn{
+          width: 30px;
+      }
+
+
+}
+
+@media screen and (max-width: 1280px) and (min-width: 600px){
+      .home__img {
+        width: 600px;
+        right: 0;
+
+    }
+
+    .home__title{
+      align-self: flex-end;
+      font-size: 100px;
+      color: var(--white-color);
+      line-height: .8;
+}
+    .contact__input{
+      width: 100%;
+      padding: 0;
+    }
+
 }

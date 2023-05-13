@@ -468,7 +468,7 @@ img{
             height: 200px;
 
             & img{
-                width: 165px;
+                width: 1650px;
             }
         }
     }
@@ -512,14 +512,14 @@ img{
 }
 
 /* For tall screens on mobiles y desktop*/
-@media screen and (min-height: 721px) {
-    .home{
-        &__container{
-            height: 640px;
-        }
-        &__img{
-            width: 500px;
-            right: 24%;
-        }
-    }
-}
+//@media screen and (min-height: 721px) {
+//    .home{
+//        &__container{
+//            height: 640px;
+//        }
+//        &__img{
+//            width: 50px;
+//            right: 24%;
+//        }
+//    }
+//}
