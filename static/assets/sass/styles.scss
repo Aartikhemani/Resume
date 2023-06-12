@@ -461,16 +461,16 @@ img{
             grid-template-columns: repeat(2, 1fr);
             align-items: center;
             text-align: initial;
-            padding: 4rem 0;
+            //padding: 4rem 0;
         }
-        &__img{
-            width: 200px;
-            height: 200px;
-
-            & img{
-                width: 1650px;
-            }
-        }
+        //&__img{
+        //    width: 200px;
+        //    height: 200px;
+        //
+        //    & img{
+        //        width: 1650px;
+        //    }
+        //}
     }
     .skills{
         &__container{

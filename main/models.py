@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import RegexValidator
 # Create your models here.
+from django.urls import reverse
 
 
 class Home(models.Model):
@@ -16,6 +17,9 @@ class Home(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('home', args=[str(self.id)])
 
 
 class About(models.Model):
@@ -33,6 +37,8 @@ class About(models.Model):
     def __str__(self):
         return self.career
 
+    def get_absolute_url(self):
+        return reverse('about', args=[str(self.id)])
 
 class Profile(models.Model):
     about = models.ForeignKey(About,on_delete=models.CASCADE)
@@ -40,12 +46,17 @@ class Profile(models.Model):
     social_logo = models.ImageField(upload_to='logo/', blank=True, null=True)
     link = models.URLField(max_length=200)
 
+    def get_absolute_url(self):
+        return reverse('profile', args=[str(self.id)])
+
 class Social(models.Model):
     about = models.ForeignKey(About,on_delete=models.CASCADE,null=True)
     social_name = models.CharField(max_length=50)
     social_logo = models.ImageField(upload_to='logo/', blank=True, null=True)
     link = models.URLField(max_length=200)
 
+    def get_absolute_url(self):
+        return reverse('social', args=[str(self.id)])
 
 class Category(models.Model):
     name = models.CharField(max_length=100)
@@ -58,21 +69,34 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('category', args=[str(self.id)])
 
 class Skills(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     skill_name = models.CharField(max_length=50)
 
+    def get_absolute_url(self):
+        return reverse('skills', args=[str(self.id)])
+
 
 class Portfolio(models.Model):
     image = models.ImageField(upload_to='portfolio/')
     link = models.URLField(max_length=200, null=True, blank=True)
+    title = models.CharField(max_length=100, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f'Portfolio {self.id}'
+
+    def get_absolute_url(self):
+        return reverse('portfolio', args=[str(self.id)])
 
 
 class Contact(models.Model):
     name = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     message = models.TextField()
+
+    def get_absolute_url(self):
+        return reverse('contact', args=[str(self.id)])

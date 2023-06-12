@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
 # Register your models here.
 admin.site.register(Home)
 admin.site.register(Portfolio)

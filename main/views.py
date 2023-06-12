@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
 # Create your views here.
 from main.models import *
 
@@ -41,5 +41,39 @@ def contactView(request):
         message=request.POST.get('message')
         data = Contact(name=name,email=email,message=message)
         data.save()
-
+        messages.success(request, "Thank you for your message")
+        return redirect('/')
     return render(request, 'main/index.html', context)
+
+
+def home(request, post_id=id):
+    item =get_object_or_404(Home, id=post_id)
+    return render(request, 'main/index.html',{'post':item})
+
+def about(request, post_id=id):
+    item =get_object_or_404(About, id=post_id)
+    return render(request, 'main/index.html',{'post':item})
+
+def skills(request, post_id=id):
+    item =get_object_or_404(Skills, id=post_id)
+    return render(request, 'main/index.html',{'post':item})
+
+def portfolio(request, post_id=id):
+    item =get_object_or_404(Portfolio, id=post_id)
+    return render(request, 'main/index.html',{'post':item})
+
+def contact(request, post_id=id):
+    item =get_object_or_404(Contact, id=post_id)
+    return render(request, 'main/index.html',{'post':item})
+
+def profile(request, post_id=id):
+    item =get_object_or_404(Profile, id=post_id)
+    return render(request, 'main/index.html',{'post':item})
+
+def social(request, post_id=id):
+    item =get_object_or_404(Social, id=post_id)
+    return render(request, 'main/index.html',{'post':item})
+
+def category(request, post_id=id):
+    item =get_object_or_404(Category, id=post_id)
+    return render(request, 'main/index.html',{'post':item})
